@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1512865623 source:c:\users\hayrton\documents\edd\vacd2017\tarea1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Lista.h"
+
+1512865247 c:\users\hayrton\documents\edd\vacd2017\tarea1\lista.h
+
