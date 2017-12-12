@@ -9,19 +9,11 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
     ColaDoble *cl = new ColaDoble();
-    Avion *av = new Avion();
-
-    av->nombre = 888;
-    av->pasajeros = 5;
-    av->desbordajes = 2;
-    av->mantenimiento = 2;
+    Avion *av = new Avion(888,33,2,2);
+    Avion *v = new Avion(333,23,3,1);
     cl->addCola(cl,av);
-    av->nombre = 333;
-    av->pasajeros =5;
-    av->desbordajes =2;
-    av->mantenimiento =3;
-    cl->addCola(cl,av);
-    cl->mostrarCola(cl,av);
+    cl->addCola(cl,v);
+    cl->mostrarCola(cl);
 
     delete(av);
     delete(cl);

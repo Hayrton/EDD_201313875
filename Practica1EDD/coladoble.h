@@ -22,7 +22,7 @@ struct ColaDoble{
     NodoColaD *current;
 public:
     void addCola(ColaDoble *cola, Avion *avion);
-    void mostrarCola(ColaDoble *cola, Avion *avion);
+    void mostrarCola(ColaDoble *cola);
     int descolar(ColaDoble *cola);
     int getSiguiente();
     int getAnterior();
@@ -34,6 +34,12 @@ struct Avion{
     int pasajeros;
     int desbordajes;
     int mantenimiento;
+    Avion(int nombre, int pasajeros, int desbordajes, int mantenimiento){
+        this->nombre = nombre;
+        this->pasajeros = pasajeros;
+        this->desbordajes = desbordajes;
+        this->mantenimiento = mantenimiento;
+    }
     std::string getAvion(Avion *a);
 };
 

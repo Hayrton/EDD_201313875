@@ -30,10 +30,10 @@ int ColaDoble::descolar(ColaDoble *cola){
     return dat;
 }
 
-void ColaDoble::mostrarCola(ColaDoble *cola, Avion *avion){
+void ColaDoble::mostrarCola(ColaDoble *cola){
     NodoColaD *aux = cola->primero;
     while(aux != NULL){
-        cout << "Name: " << aux->avion->getAvion(avion)<<endl;
+        cout << "Name: " << aux->avion->nombre<<endl;
         aux = aux->siguiente;
     }
 }
