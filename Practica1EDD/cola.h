@@ -1,7 +1,8 @@
 #ifndef COLA_H
 #define COLA_H
 #include <iostream>
-#include <QString>
+
+using namespace std;
 
 typedef struct NodoCola NodoCola;
 typedef struct Cola Cola;
@@ -16,12 +17,12 @@ struct cola{
   NodoCola *primero;
   NodoCola *ultimo;
  public:
-  QString cad;
+    string cad;
     void agregar(cola *c, int dat);
     int desc(cola *c);
     void recorrerCola(cola *c);
     void graficarCola(cola *c);
-    QString contenidoCola(cola *c);
+    string contenidoCola(cola *c);
 };
 
 

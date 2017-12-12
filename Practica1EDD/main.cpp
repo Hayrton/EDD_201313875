@@ -6,17 +6,25 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    cola *cl = new cola();
-    cl->agregar(cl,3);
-    cl->agregar(cl,5);
-    cl->agregar(cl,9);
-    cl->agregar(cl,7);
-    //cl->recorrerCola(cl);
-    cl->graficarCola(cl);
-
-    delete(cl);
     MainWindow w;
     w.show();
+    ColaDoble *cl = new ColaDoble();
+    Avion *av = new Avion();
+
+    av->nombre = 888;
+    av->pasajeros = 5;
+    av->desbordajes = 2;
+    av->mantenimiento = 2;
+    cl->addCola(cl,av);
+    av->nombre = 333;
+    av->pasajeros =5;
+    av->desbordajes =2;
+    av->mantenimiento =3;
+    cl->addCola(cl,av);
+    cl->mostrarCola(cl,av);
+
+    delete(av);
+    delete(cl);
 
     return a.exec();
 }
