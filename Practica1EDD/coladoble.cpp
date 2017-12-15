@@ -9,15 +9,15 @@ NodoColaD::NodoColaD(Avion *avion){
     this->siguiente = NULL;
     this->avion = avion;
 }
-void ColaDoble::addCola(ColaDoble *cola, Avion *avion){
+void ColaDoble::addCola(Avion *avion){
     NodoColaD *nuevo = new NodoColaD(avion);
     if(ultimo == NULL){
-        cola->primero = nuevo;
-        cola->ultimo = cola->primero;
+        primero = nuevo;
+        ultimo = primero;
     }else{
-        cola->ultimo->siguiente = nuevo;
-        nuevo->anterior = cola->ultimo;
-        cola->ultimo = nuevo;
+        ultimo->siguiente = nuevo;
+        nuevo->anterior = ultimo;
+        ultimo = nuevo;
     }
 }
 
@@ -30,17 +30,61 @@ int ColaDoble::descolar(ColaDoble *cola){
     return dat;
 }
 
-void ColaDoble::mostrarCola(ColaDoble *cola){
-    NodoColaD *aux = cola->primero;
+void ColaDoble::mostrarCola(){
+    NodoColaD *aux = primero;
     while(aux != NULL){
-        cout << "Name: " << aux->avion->nombre<<endl;
+        cout << aux->avion->getAvion()<<endl;
         aux = aux->siguiente;
     }
 }
 
-std::string Avion::getAvion(Avion *a){
-    string av = "Nombre: " + to_string(a->nombre) + " No. Pasajeros: " + to_string(a->pasajeros);
-    av += " No. Desabordaje: "+to_string(a->desbordajes) + " No. Mantenimiento: "+ to_string(a->mantenimiento);
+av ColaDoble::obtenerAvion(ColaDoble *cola){
+    Avion *avi;
+    NodoColaD *aux = cola->primero;
+    if(cola->primero == NULL){
+        cout<<"cola de avion vacia"<<endl;
+    }
+    else{
+        avi = aux->avion;
+        cola->primero = cola->primero->siguiente;
+        delete(avi);
+    }
+    return avi;
+}
+
+
+std::string Avion::getAvion(){
+    string av ="Tamanio: "+ to_string(tam) + " Nombre: " + to_string(nombre) + " No. Pasajeros: " + to_string(pasajeros);
+    av += " No. Desabordaje: "+to_string(desbordajes) + " No. Mantenimiento: "+ to_string(mantenimiento);
     return av;
 }
+
+std::string ColaDoble::contenidoNodos(){
+    NodoColaD *tmp1 = primero;
+    string cadena = "";
+    if(tmp1 == NULL){
+        return NULL;
+    }
+    else{
+        while(tmp1->siguiente !=NULL){
+            string contmp1 = to_string(tmp1->avion->nombre)+"[label=\""+ tmp1->avion->getAvion()+"\"]";
+            string contmp2 = to_string(tmp1->siguiente->avion->nombre)+"[label=\""+ tmp1->siguiente->avion->getAvion()+"\"]";
+            string nodAp = to_string(tmp1->avion->nombre) + " -> " + to_string(tmp1->siguiente->avion->nombre);
+            if(tmp1->anterior != NULL){
+                string conant1 = to_string(tmp1->avion->nombre)+"[label=\""+ tmp1->avion->getAvion()+"\"]";
+                string conant2 = to_string(tmp1->anterior->avion->nombre)+"[label=\""+ tmp1->anterior->avion->getAvion()+"\"]";
+                string nodAnt = to_string(tmp1->avion->nombre) + " -> " + to_string(tmp1->anterior->avion->nombre);
+                cadena += conant1 + "\n";
+                cadena += conant2 + "\n";
+                cadena += nodAnt + "\n";
+            }
+            cadena += contmp1 + "\n";
+            cadena += contmp2 + "\n";
+            cadena += nodAp + "\n";
+            tmp1 = tmp1->siguiente;
+        }
+    }
+    return cadena;
+}
+
 

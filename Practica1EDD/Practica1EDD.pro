@@ -28,13 +28,20 @@ SOURCES += \
         mainwindow.cpp \
     coladoble.cpp \
     cola.cpp \
-    pila.cpp
+    pila.cpp \
+    datos.cpp \
+    listacirulardoble.cpp
 
 HEADERS += \
         mainwindow.h \
     coladoble.h \
     cola.h \
-    pila.h
+    pila.h \
+    datos.h \
+    listacirculardoble.h
 
 FORMS += \
         mainwindow.ui
+
+RESOURCES += \
+    recursos.qrc
