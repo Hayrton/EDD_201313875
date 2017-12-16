@@ -19,12 +19,14 @@ public:
     int TurnoDesabordaje;
     ColaDoble *colaAvion = new ColaDoble();
     cola *colaPasajero = new cola();
+    ListaDC *listaMaletas = new ListaDC();
     int pasajeros;
     int mantenimiento;
     int datoRandom(int LINF, int LSUP);
     void agregarAviones(int noAvion);
     void agregarPasajeros(int pas);
-    void agregarMaleta(int equi);
+    void agregarMaleta(int equi, int idpasajero);
+    void turnoAvion();
     explicit MainWindow(QWidget *parent = 0);
 
     ~MainWindow();

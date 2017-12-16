@@ -166,5 +166,6 @@ void MainWindow::agregarMaleta(int equi, int idpasajero){
     while(contador < equi){
         eq = new Equipaje((*(int*)(void*)&eq),idpasajero);
         listaMaletas->addListaDC(eq);
+        contador ++;
     }
 }
