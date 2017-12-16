@@ -13,31 +13,31 @@ NodoCola::NodoCola(Pasajeros *pas){
     this->siguiente = NULL;
 }
 
-void cola::agregar(cola *c, Pasajeros *pas){
+void cola::agregar(Pasajeros *pas){
     NodoCola *nuevo = new NodoCola(pas);
-    if(c->primero == NULL)
-        c->primero = c->ultimo = nuevo;
-    c->ultimo->siguiente = nuevo;
-    c->ultimo = nuevo;
+    if(primero == NULL)
+        primero = ultimo = nuevo;
+    ultimo->siguiente = nuevo;
+    ultimo = nuevo;
 }
 
-int cola::desc(cola *c){
+int cola::descolar(){
     int dat;
-    NodoCola *aux = c->primero;
+    NodoCola *aux = primero;
     dat = aux->dato;
     delete(aux);
     return dat;
 }
 
-void cola::recorrerCola(cola *c){
-    NodoCola *actual = c->primero;
+void cola::recorrerCola(){
+    NodoCola *actual = primero;
     while (actual != NULL) {
         std::cout<<"dato: "<<actual->pasajero->getPasajero()<<std::endl;
         actual = actual->siguiente;
     }
 }
 
-void cola::graficarCola(cola *c){
+void cola::graficarCola(){
     string cadena = "";
     string cc = "";
     ofstream fichero("graficaCola.dot");
@@ -46,15 +46,15 @@ void cola::graficarCola(cola *c){
         exit(1);
     }
     cadena = "digraph grafico{\n";
-    cadena += contenidoCola(c);
+    cadena += contenidoCola();
     cadena += "}";
     fichero<<cadena<<endl;
     fichero.close();
     system("dot -Tpng graficaCola.dot -o colaAvion.png");
 }
 
-string cola::contenidoCola(cola *c){
-    NodoCola *tmp = c->primero;
+string cola::contenidoCola(){
+    NodoCola *tmp = primero;
     string aux1 = "";
     string aux2 = "";
     while(tmp->siguiente != NULL){

@@ -19,8 +19,8 @@ struct NodoLDC{
 struct ListaDC{
     NodoLDC *primero;
     NodoLDC *ultimo;
-    void addListaDC(ListaDC *list, Equipaje *m);
-    void mostrar(ListaDC *list);
+    void addListaDC(Equipaje *m);
+    void mostrar();
     void eliminar(Equipaje *m);
 };
 

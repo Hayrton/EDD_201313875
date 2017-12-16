@@ -21,13 +21,17 @@ void ColaDoble::addCola(Avion *avion){
     }
 }
 
-int ColaDoble::descolar(ColaDoble *cola){
+void ColaDoble::descolar(){
     int dat;
-    NodoColaD *aux = cola->primero;
-    dat = aux->dato;
-    cola->primero = cola->primero->siguiente;
+    NodoColaD *aux = primero;
+    if(primero == NULL){
+        cout<<"Lista Vacia"<<endl;
+    }else{
+        dat = aux->avion->pasajeros;
+        primero = primero->siguiente;
+        delete(aux);
+    }
     delete(aux);
-    return dat;
 }
 
 void ColaDoble::mostrarCola(){
@@ -38,20 +42,33 @@ void ColaDoble::mostrarCola(){
     }
 }
 
-av ColaDoble::obtenerAvion(ColaDoble *cola){
+av ColaDoble::obtenerAvion(){
     Avion *avi;
-    NodoColaD *aux = cola->primero;
-    if(cola->primero == NULL){
+    NodoColaD *aux = primero;
+    if(primero == NULL){
         cout<<"cola de avion vacia"<<endl;
+        return NULL;
     }
     else{
         avi = aux->avion;
-        cola->primero = cola->primero->siguiente;
+        primero = primero->siguiente;
         delete(avi);
     }
     return avi;
 }
 
+int ColaDoble::mostrarPrimero(){
+    if(primero == NULL)
+        cout<<"Lista de Aviones vacia"<<endl;
+    return primero->avion->desbordajes;
+}
+
+int ColaDoble::No_Pesonas(){
+    if(primero == NULL){
+        cout << "Lista de aviones vacia"<<endl;
+    }
+    return primero->avion->pasajeros;
+}
 
 std::string Avion::getAvion(){
     string av ="Tamanio: "+ to_string(tam) + " Nombre: " + to_string(nombre) + " No. Pasajeros: " + to_string(pasajeros);

@@ -28,11 +28,10 @@ struct ColaDoble{
 public:
     void addCola(Avion *avion);
     void mostrarCola();
-    int descolar(ColaDoble *cola);
-    int getSiguiente();
-    int getAnterior();
-    int getCurrent();
-    av obtenerAvion(ColaDoble *cola);
+    void descolar();
+    int mostrarPrimero();
+    int No_Pesonas();
+    av obtenerAvion();
     std::string contenidoNodos();
 };
 

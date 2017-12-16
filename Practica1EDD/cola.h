@@ -20,11 +20,11 @@ struct cola{
   NodoCola *ultimo;
  public:
     string cad;
-    void agregar(cola *c, Pasajeros *pas);
-    int desc(cola *c);
-    void recorrerCola(cola *c);
-    void graficarCola(cola *c);
-    string contenidoCola(cola *c);
+    void agregar(Pasajeros *pas);
+    int descolar();
+    void recorrerCola();
+    void graficarCola();
+    string contenidoCola();
 };
 
 struct Pasajeros{

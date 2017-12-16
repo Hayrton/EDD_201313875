@@ -31,18 +31,4 @@ void Datos::graficar(){
     system("dot -Tpng grafica.dot -o cola.png");
 }
 
-void Datos::DesabordajePasajero(int NoPasajeros){
-    colaPasajero = new cola();
-    int cont = 0;
-    while(cont < NoPasajeros){
-        int numMaletas = generarDatos(1,4);
-        int numDocumento = generarDatos(1,10);
-        int numRegistros = generarDatos(1,3);
-        pasaje = new Pasajeros(NamePasajero,numMaletas,numDocumento,numRegistros);
-        colaPasajero->agregar(colaPasajero,pasaje);
-        cont++;
-        NamePasajero++;
-    }
-    colaPasajero->recorrerCola(colaPasajero);
-    colaPasajero->graficarCola(colaPasajero);
-}
+
