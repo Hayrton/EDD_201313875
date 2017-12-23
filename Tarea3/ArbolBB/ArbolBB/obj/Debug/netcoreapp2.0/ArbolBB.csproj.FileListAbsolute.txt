@@ -1,0 +1,11 @@
+C:\Users\Hayrton\source\repos\ArbolBB\ArbolBB\bin\Debug\netcoreapp2.0\ArbolBB.deps.json
+C:\Users\Hayrton\source\repos\ArbolBB\ArbolBB\bin\Debug\netcoreapp2.0\ArbolBB.runtimeconfig.json
+C:\Users\Hayrton\source\repos\ArbolBB\ArbolBB\bin\Debug\netcoreapp2.0\ArbolBB.runtimeconfig.dev.json
+C:\Users\Hayrton\source\repos\ArbolBB\ArbolBB\bin\Debug\netcoreapp2.0\ArbolBB.dll
+C:\Users\Hayrton\source\repos\ArbolBB\ArbolBB\bin\Debug\netcoreapp2.0\ArbolBB.pdb
+C:\Users\Hayrton\source\repos\ArbolBB\ArbolBB\obj\Debug\netcoreapp2.0\ArbolBB.csprojResolveAssemblyReference.cache
+C:\Users\Hayrton\source\repos\ArbolBB\ArbolBB\obj\Debug\netcoreapp2.0\ArbolBB.csproj.CoreCompileInputs.cache
+C:\Users\Hayrton\source\repos\ArbolBB\ArbolBB\obj\Debug\netcoreapp2.0\ArbolBB.AssemblyInfoInputs.cache
+C:\Users\Hayrton\source\repos\ArbolBB\ArbolBB\obj\Debug\netcoreapp2.0\ArbolBB.AssemblyInfo.cs
+C:\Users\Hayrton\source\repos\ArbolBB\ArbolBB\obj\Debug\netcoreapp2.0\ArbolBB.dll
+C:\Users\Hayrton\source\repos\ArbolBB\ArbolBB\obj\Debug\netcoreapp2.0\ArbolBB.pdb
